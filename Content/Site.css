@@ -1,0 +1,136 @@
+﻿* {
+    transition: all .4s ease-in-out;
+    font-family: 'Adobe Arabic', sans-serif;
+    font-size:2rem;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+ 
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+  
+}
+h2{
+    font-size: 3.2rem;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+margin-top:5px;
+   outline:none;
+   border-radius: 5px;
+
+   
+}
+.font {
+    font-size:2rem;
+}
+th, td {
+    font-size: 2rem;
+}
+label {
+    padding: 0;
+    margin: 5px 0 5px 0;
+    font-size: 2rem;
+}
+.row{
+    margin-top: 20px;
+}
+.loginForm {
+    padding-top: 20px;
+    width:100%;
+}
+.btnScale{
+
+transition: all .3s ease-in-out;
+margin: 10px 0 10px 0;
+
+   }
+.btnScale:hover {
+
+ 
+ }
+.logo{
+   
+    font-size: 3.4rem;
+    animation: trasladoX 8s linear infinite;
+}
+.logo:hover{
+    transform:scale(1.1) translateY(5px)
+}
+a{
+    text-decoration:none;
+}
+.modoNocturnos {
+    position:absolute;
+    top:14px;
+    z-index:10000;
+    color: #fff;
+    right: 20%;
+    font-size:1.6rem;
+}
+/*@keyframes trasladoX{
+    0% {
+        transform:  translateX(-150px);
+    }
+    20% {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+    40% {
+        transform: translateX(500px);  
+        opacity:0;
+    }
+    65% {
+        transform: translateX(750px);
+    }
+    85% {
+        transform: translateX(1000px);
+    }
+    99.9999999999% {
+        transform: translateX(1250px);
+    }
+}*/
+
+.modoNoche{
+    background:#000;
+}
+@media (max-width: 998px){
+   .logo{
+       animation:none;
+   }
+    .loginForm{
+        display:flex;
+        justify-content:center ;
+        flex-direction:column;
+        width: 350px!important;
+        width:100%;
+        height:100%;
+        margin:0 auto;
+        border: 2px solid #000;
+        border-radius:5px;
+    }
+       /* .loginForm input {
+            margin:10px;
+        }*/
+        /*label {
+            margin-left:10px;
+        }*/
+        /*.btnScale {
+            margin: 10px 55px 10px 55px;
+        }*/
+
+}
+

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BD_MVCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cstate" EntityType="BD_MVCModel.cstate" />
+    <EntitySet Name="tbl_user" EntityType="BD_MVCModel.tbl_user" />
+    <AssociationSet Name="FK_tbl_user_cstate" Association="BD_MVCModel.FK_tbl_user_cstate">
+      <End Role="cstate" EntitySet="cstate" />
+      <End Role="tbl_user" EntitySet="tbl_user" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="cstate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_user" Relationship="BD_MVCModel.FK_tbl_user_cstate" FromRole="cstate" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="idState" Type="Int32" />
+    <NavigationProperty Name="cstate" Relationship="BD_MVCModel.FK_tbl_user_cstate" FromRole="tbl_user" ToRole="cstate" />
+  </EntityType>
+  <Association Name="FK_tbl_user_cstate">
+    <End Type="BD_MVCModel.cstate" Role="cstate" Multiplicity="0..1" />
+    <End Type="BD_MVCModel.tbl_user" Role="tbl_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cstate">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbl_user">
+        <PropertyRef Name="idState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
